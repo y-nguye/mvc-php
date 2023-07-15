@@ -7,8 +7,10 @@
 </head>
 <body>
     <div>
-
     <h3>Thêm thành viên</h3>
+    <a href='index.php?controller=member&action=list'>Danh sách thành viên</a>
+    <br/>
+    <br/>
     <form action="" method="post" enctype="multipart/form">
         <label for="">Tên:</label><br/>
         <input type="text" name="name-input"><br/><br/>

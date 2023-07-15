@@ -28,11 +28,8 @@ class DataBase {
 
     public function getData($id) {
         $sql = "SELECT id, name, yearold, address FROM $this->table WHERE id = $id";
+        $this->result = $this->execute($sql);
 
-        // Thực thi truy vấn
-        $this->result = $this->execute($sql);;
-
-        // Kiểm tra và xử lý kết quả truy vấn
         if ($this->result->num_rows > 0) {
             return $this->result->fetch_assoc();
         } else {
@@ -42,11 +39,8 @@ class DataBase {
 
     public function getAllData() {
         $sql = "SELECT * FROM $this->table";
-
-        // Thực thi truy vấn
         $this->result = $this->execute($sql);;
 
-        // Kiểm tra và xử lý kết quả truy vấn
         if ($this->result->num_rows > 0) {
             return $this->result;
         } else {
@@ -55,7 +49,6 @@ class DataBase {
     }
 
     public function setData($hoten, $namsinh, $quequan) {
-        // Đưa dữ liệu vào trong bảng $this->table
         $sql = "INSERT INTO $this->table (id, name, yearold, address) VALUES (null, '$hoten', '$namsinh', '$quequan')";
         $this->execute($sql);
     }

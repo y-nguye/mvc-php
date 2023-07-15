@@ -17,6 +17,7 @@ switch ($controller) {
         break;
 
     default:
+        require_once('Controller/action.php');
         break;
 }
 
