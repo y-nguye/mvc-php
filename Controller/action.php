@@ -29,7 +29,7 @@ switch ($action) {
         break;
 
     case 'list':
-        require_once('View/members/list.php');
+        require_once('View/members/list_members.php');
         break;
 
     case 'delete':
@@ -37,7 +37,7 @@ switch ($action) {
             $id = $_GET['id'];
             $db->deleteData($id);
         }
-        require_once('View/members/list.php');
+        require_once('View/members/list_members.php');
         break;
     default:
         break;
